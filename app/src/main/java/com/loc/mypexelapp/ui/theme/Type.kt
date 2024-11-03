@@ -2,9 +2,12 @@ package com.loc.mypexelapp.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import com.loc.mypexelapp.R
 
 // Set of Material typography styles to start with
 val Typography = Typography(
@@ -31,4 +34,36 @@ val Typography = Typography(
         letterSpacing = 0.5.sp
     )
     */
+)
+
+val Typography2 = Typography(
+    bodySmall = TextStyle(
+        fontFamily = FontFamily(Font(R.font.mulish_regular)),
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        lineHeight = 14.sp,
+        letterSpacing = 0.02.em
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = FontFamily(Font(R.font.mulish_bold)),
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp,
+        lineHeight = 22.59.sp
+    ),
+    headlineLarge = TextStyle(
+        fontFamily = FontFamily(Font(R.font.mulish_regular)),
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        lineHeight = 17.57.sp,
+        letterSpacing = 0.02.em
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = FontFamily(Font(R.font.mulish_medium)),
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        lineHeight = 17.57.sp
+    )
+
+
+
 )

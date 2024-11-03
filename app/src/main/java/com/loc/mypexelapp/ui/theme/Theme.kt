@@ -1,6 +1,5 @@
 package com.loc.mypexelapp.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -12,26 +11,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = Black,               // Primary brand color
+    onPrimary = White,            // Color for content (text/icons) on primary background
+    primaryContainer = Black,
+    surface = Black,
+    onSurface = White,
+    secondary = Red
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+    primary = White,
+    secondary = Red,
+    primaryContainer = White,
+    onSecondaryContainer = LightGrey
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
 )
+
 
 @Composable
 fun MyPexelAppTheme(
@@ -52,7 +47,7 @@ fun MyPexelAppTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = Typography2,
         content = content
     )
 }

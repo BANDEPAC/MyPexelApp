@@ -1,7 +1,7 @@
 package com.loc.mypexelapp.domain.model
 
 data class Collection(
-    val description: Any,
+    val description: String?,
     val id: String,
     val media_count: Int,
     val photos_count: Int,

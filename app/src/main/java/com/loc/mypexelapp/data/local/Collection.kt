@@ -1,11 +1,15 @@
-package com.loc.mypexelapp.domain.model
+package com.loc.mypexelapp.data.local
 
-data class Collection(
-    val description: Any,
-    val id: String,
-    val media_count: Int,
-    val photos_count: Int,
-    val `private`: Boolean,
-    val title: String,
-    val videos_count: Int
-)
+//import androidx.room.Entity
+//import androidx.room.PrimaryKey
+//
+//@Entity
+//data class Collection(
+//    val description: String?,
+//    @PrimaryKey val id: String,
+//    val mediaCount: Int,
+//    val photosCount: Int,
+//    val isPrivate: Boolean,
+//    val title: String,
+//    val videosCount: Int
+//)

@@ -1,4 +1,4 @@
-package com.loc.mypexelapp.presentation.BottomNavigation
+package com.loc.mypexelapp.presentation.Navigator.BottomNavigationBar
 
 import androidx.compose.animation.core.AnimationSpec
 import androidx.compose.animation.core.Spring
@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -24,7 +23,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
@@ -112,12 +110,12 @@ private fun AnimatedBottomBarTest() {
 
     val test = listOf(
         BottomItem(
-            iconSelected = painterResource(R.drawable.ic_homeactive),
-            iconNotSelected = painterResource(R.drawable.ic_homeinactive)
+            iconSelected = R.drawable.ic_homeactive,
+            iconNotSelected = R.drawable.ic_homeinactive
     ),
         BottomItem(
-            iconSelected = painterResource(R.drawable.ic_bookmarkactive),
-            iconNotSelected = painterResource(R.drawable.ic_bookmarkinactive)
+            iconSelected = R.drawable.ic_bookmarkactive,
+            iconNotSelected = R.drawable.ic_bookmarkinactive
         ),
     )
 

@@ -1,32 +1,34 @@
 package com.loc.mypexelapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.res.painterResource
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.loc.mypexelapp.data.remote.PexelAPI
-import com.loc.mypexelapp.data.repository.PexelRepositoryImpl
-import com.loc.mypexelapp.domain.usecases.GetCuratedPhotos
+import com.loc.mypexelapp.presentation.HomeScreen.HomeScreen
+import com.loc.mypexelapp.presentation.Navigator.BottomNavigationBar.AnimatedBottomBar
+import com.loc.mypexelapp.presentation.Navigator.BottomNavigationBar.BottomItem
+import com.loc.mypexelapp.presentation.Navigator.BottomNavigationBar.NavigationBarItem
+import com.loc.mypexelapp.presentation.Navigator.PexelNavigator
 import com.loc.mypexelapp.ui.theme.MyPexelAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
+
         setContent {
             MyPexelAppTheme {
-
+                PexelNavigator()
             }
         }
+
     }
 }

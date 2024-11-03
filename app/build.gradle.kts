@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
-    id("com.google.dagger.hilt.android") version "2.44" apply false// Исправлено здесь
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId = "com.loc.mypexelapp"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -49,6 +49,9 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 
@@ -62,13 +65,16 @@ dependencies {
         implementation(libs.androidx.ui.graphics)
         implementation(libs.androidx.ui.tooling.preview)
         implementation(libs.androidx.material3)
-    implementation(libs.androidx.paging.common.android)
+        implementation(libs.androidx.paging.common.android)
+        implementation(libs.androidx.ui.test.android)
+        implementation(libs.androidx.navigation.compose)
+        implementation(libs.androidx.paging.compose.android)
     testImplementation(libs.junit)
-        androidTestImplementation(libs.androidx.junit)
-        androidTestImplementation(libs.androidx.espresso.core)
-        androidTestImplementation(platform(libs.androidx.compose.bom))
-        androidTestImplementation(libs.androidx.ui.test.junit4)
-        debugImplementation(libs.androidx.ui.tooling)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    debugImplementation(libs.androidx.ui.tooling)
 
         // Splashscreen
         implementation(libs.androidx.core.splashscreen)
@@ -76,9 +82,10 @@ dependencies {
         //Retrofit
         implementation(libs.retrofit)
         implementation(libs.converter.gson)
+        implementation(libs.logging.interceptor)
 
         //Coil
-        implementation(libs.coil.compose)
+    implementation(libs.coil.compose)
 
         //Room
         var room_version = "2.6.1"
@@ -86,11 +93,18 @@ dependencies {
         kapt("androidx.room:room-compiler:$room_version")
         implementation("androidx.room:room-ktx:2.6.1")
 
+
         val paging_version = "2.1.2"
 
         implementation("androidx.paging:paging-runtime:$paging_version") // For Kotlin use paging-runtime-ktx
 
         // alternatively - without Android dependencies for testing
         testImplementation("androidx.paging:paging-common:$paging_version") // For Kotlin use paging-common-ktx
+
+        implementation("com.google.dagger:hilt-android:2.51.1")
+        kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+        implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+        implementation(kotlin("script-runtime"))
+
 
 }

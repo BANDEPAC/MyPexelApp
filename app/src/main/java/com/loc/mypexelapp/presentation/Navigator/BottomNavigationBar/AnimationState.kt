@@ -1,4 +1,4 @@
-package com.loc.mypexelapp.presentation.BottomNavigation
+package com.loc.mypexelapp.presentation.Navigator.BottomNavigationBar
 
 internal enum class AnimationState {
     Start,

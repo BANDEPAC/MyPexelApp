@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,43 +22,39 @@ import com.loc.mypexelapp.ui.theme.MyPexelAppTheme
 import com.loc.mypexelapp.ui.theme.Red
 
 @Composable
-fun EmptyBookmarks(onClick: () -> Unit) {
+fun EmptyScreen(explanation: String,onClick: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.White),
+            .padding(bottom = 64.dp)
+            ,
         contentAlignment = Alignment.Center
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier
         ) {
             Text(
-                text = "You haven't saved anything yet",
+                text = explanation,
                 style = MaterialTheme.typography.bodyMedium,
                 color = Black,
-                modifier = Modifier.clickable {
-                    onClick()
-                }
             )
             Spacer(modifier = Modifier.height(12.dp))
             Text(
                 text = "Explore",
                 style = MaterialTheme.typography.bodyLarge,
                 color = Red,
-                modifier = Modifier.clickable {
-                    onClick()
-                }
+                modifier = Modifier.clickable { onClick() }
             )
         }
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-private fun EmptyBookmarksTest() {
+private fun EmptyScreenTest() {
     MyPexelAppTheme {
-        EmptyBookmarks(onClick = {})
+        EmptyScreen(onClick = { /* Handle Click */ }, explanation = "No result found")
     }
-
 }

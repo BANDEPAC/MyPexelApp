@@ -1,8 +1,6 @@
-package com.loc.mypexelapp.presentation.BottomNavigation
-
-import androidx.compose.ui.graphics.painter.Painter
+package com.loc.mypexelapp.presentation.Navigator.BottomNavigationBar
 
 data class BottomItem(
-    val iconSelected: Painter,
-    val iconNotSelected: Painter
+    val iconSelected: Int,
+    val iconNotSelected: Int
 )
